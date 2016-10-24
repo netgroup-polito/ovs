@@ -537,10 +537,8 @@ main(int argc, char *argv[])
             lport_index_init(&lports, ctx.ovnsb_idl);
             mcgroup_index_init(&mcgroups, ctx.ovnsb_idl);
 
-            enum mf_field_id mff_ovn_geneve = ofctrl_run(br_int,
-                                                         &pending_ct_zones);
+            enum mf_field_id mff_ovn_geneve = 0;
 
-            pinctrl_run(&ctx, &lports, br_int, chassis_id, &local_datapaths);
             update_ct_zones(&all_lports, &patched_datapaths, &ct_zones,
                             ct_zone_bitmap, &pending_ct_zones);
             commit_ct_zones(&ctx, br_int, &pending_ct_zones);
