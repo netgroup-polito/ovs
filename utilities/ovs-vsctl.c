@@ -65,7 +65,7 @@ static bool oneline;
 static bool dry_run;
 
 /* --no-wait: Wait for ovs-vswitchd to reload its configuration? */
-static bool wait_for_reload = true;
+static bool wait_for_reload = false;
 
 /* --timeout: Time to wait for a connection to 'db'. */
 static int timeout;
